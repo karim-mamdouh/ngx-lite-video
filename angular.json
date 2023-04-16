@@ -20,18 +20,14 @@
             "outputPath": "dist/ngx-lite-video-prototype",
             "index": "projects/ngx-lite-video-prototype/src/index.html",
             "main": "projects/ngx-lite-video-prototype/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/ngx-lite-video-prototype/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/ngx-lite-video-prototype/src/favicon.ico",
               "projects/ngx-lite-video-prototype/src/assets"
             ],
-            "styles": [
-              "projects/ngx-lite-video-prototype/src/styles.scss"
-            ],
+            "styles": ["projects/ngx-lite-video-prototype/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -82,19 +78,14 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/ngx-lite-video-prototype/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/ngx-lite-video-prototype/src/favicon.ico",
               "projects/ngx-lite-video-prototype/src/assets"
             ],
-            "styles": [
-              "projects/ngx-lite-video-prototype/src/styles.scss"
-            ],
+            "styles": ["projects/ngx-lite-video-prototype/src/styles.scss"],
             "scripts": []
           }
         }
@@ -104,7 +95,12 @@
       "projectType": "library",
       "root": "projects/ngx-lite-video",
       "sourceRoot": "projects/ngx-lite-video/src",
-      "prefix": "lib",
+      "prefix": "ngx-lite",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -125,10 +121,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/ngx-lite-video/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }

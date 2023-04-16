@@ -1,0 +1,10 @@
+<div class="ngx-lite-video">
+  <ng-container *ngIf="!(_showIframe | async); else iframe">
+    <div class="ngx-lite-video__banner">
+      <figure class="ngx-lite-video__banner-container">
+        <img alt="lite-video-banner" [src]="_bannerSrc" />
+      </figure>
+    </div>
+  </ng-container>
+  <ng-template #iframe> </ng-template>
+</div>

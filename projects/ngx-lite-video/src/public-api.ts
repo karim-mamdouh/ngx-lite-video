@@ -1,7 +1,1 @@
-/*
- * Public API Surface of ngx-lite-video
- */
-
-export * from './lib/ngx-lite-video.service';
-export * from './lib/ngx-lite-video.component';
-export * from './lib/ngx-lite-video.module';
+export * from './lib/components/ngx-lite-video/ngx-lite-video.component';
