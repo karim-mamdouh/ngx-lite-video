@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { ThumbSize, VideoMode, VimeoVideo } from '../../models';
 import { NgxLiteVideoGeneralService } from '../../services/ngx-lite-video-general-service.service';
 import { SafeUrl } from '@angular/platform-browser';
@@ -19,30 +19,16 @@ export class NgxLiteVimeoComponent implements OnInit {
   _showIframe: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   _bannerSrc: Subject<string> = new Subject();
   _videoUrl!: SafeUrl;
+  _vimeoBanner$!:Observable<any>
   @Input() videoId!: string;
   // @Input() videoTitle!: string;
   @Input() thumbQuality: ThumbSize = 'high';
   @Input() showTitle: boolean = false;
 
-  readonly thumbHelper = {
-    'max': 'thumbnail_large',
-    'high': 'thumbnail_large',
-    'medium': 'thumbnail_medium',
-    'low': 'thumbnail_small',
-  }
   constructor(private __ngxService: NgxLiteVideoGeneralService) { }
 
   ngOnInit(): void {
-    this.__ngxService.getVimeoBanner(this.videoId, this.thumbQuality).subscribe(
-      (vimeo: any) => {
-        console.log(vimeo);
-        vimeo.url
-        this._bannerSrc.next(`url(${vimeo[this.thumbHelper[this.thumbQuality]]})`)
-        this._videoUrl = this.__ngxService.getVimeoVideoUrl(this.videoId);
-
-      }
-    )
-
-    console.log(this._videoUrl);
+   this._vimeoBanner$= this.__ngxService.getVimeoBanner(this.videoId, this.thumbQuality);
+   this._videoUrl=this.__ngxService.getVimeoVideoUrl(this.videoId)
   }
 }

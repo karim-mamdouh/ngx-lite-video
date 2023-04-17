@@ -6,13 +6,19 @@ import { Observable, map } from 'rxjs';
 @Injectable()
 export class NgxLiteVideoGeneralService {
   //#region Declerations
-  private __youtubeSizes: YouTubeQualities = {
+  private readonly __youtubeSizes: YouTubeQualities = {
     low: 'sddefault',
     medium: 'mqdefault',
     high: 'hqdefault',
     max: 'maxresdefault',
   };
   //#endregion
+  private readonly thumbHelper: any = {
+    'max': 'thumbnail_large',
+    'high': 'thumbnail_large',
+    'medium': 'thumbnail_medium',
+    'low': 'thumbnail_small',
+  }
 
   constructor(private __domSanitizer: DomSanitizer, private http: HttpClient) { }
 
@@ -30,20 +36,22 @@ export class NgxLiteVideoGeneralService {
     end: number
   ): SafeUrl {
     return this.__domSanitizer.bypassSecurityTrustResourceUrl(
-      `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&controls=${
-        hasControls ? '1' : '0'
-      }${loop ? '&playlist=' + videoId + '&loop=1' : ''}${
-        start ? '&start=' + start : ''
+      `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&controls=${hasControls ? '1' : '0'
+      }${loop ? '&playlist=' + videoId + '&loop=1' : ''}${start ? '&start=' + start : ''
       }${end ? '&end=' + end : ''}${allowFullScreen ? '&fs=1' : '&fs=0'}`
     );
   }
 
-  getVimeoVideoUrl(videoId: string):SafeUrl{
+  getVimeoVideoUrl(videoId: string): SafeUrl {
     return this.__domSanitizer.bypassSecurityTrustResourceUrl(
       `https://player.vimeo.com/video/${videoId}?autoplay=1`
     );
   }
-  getVimeoBanner(videoId: string, quality: ThumbSize): Observable<VimeoVideo> {
-    return this.http.get(`http://vimeo.com/api/v2/video/${videoId}.json`).pipe(map((data: any) => data[0]))
+  getVimeoBanner(videoId: string, quality: ThumbSize): Observable<any> {
+    return this.http.get(`http://vimeo.com/api/v2/video/${videoId}.json`).pipe(map((data: any) => {
+      const bannerSrc = `url(${data[0][this.thumbHelper[quality]]})`
+      const title = data[0].title;
+      return { bannerSrc, title }
+    }))
   }
 }
