@@ -37,4 +37,9 @@ export class NgxLiteVideoComponent implements OnInit {
       this.thumbSize
     );
   }
+  log(){
+    console.log('loaded');
+
+  }
+
 }
