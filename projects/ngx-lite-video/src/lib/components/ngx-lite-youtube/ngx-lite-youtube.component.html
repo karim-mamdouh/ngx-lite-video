@@ -16,7 +16,7 @@
   ></iframe>
 
   <!-- Title shown before iframe is loaded -->
-  <p *ngIf="videoTitle && !(_showIframe | async)" class="ngx-lite-video__title">
+  <p *ngIf="videoTitle && !_showIframe.value" class="ngx-lite-video__title">
     {{ videoTitle }}
   </p>
 </div>
