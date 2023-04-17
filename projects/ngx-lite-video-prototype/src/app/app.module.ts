@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgxLiteVideoComponent } from 'projects/ngx-lite-video/src/public-api';
+import { NgxLiteYoutubeComponent } from 'projects/ngx-lite-video/src/lib/components';
 
 @NgModule({
   declarations: [AppComponent],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA],
-  imports: [BrowserModule, AppRoutingModule, NgxLiteVideoComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [BrowserModule, AppRoutingModule, NgxLiteYoutubeComponent],
   providers: [],
   bootstrap: [AppComponent],
 })

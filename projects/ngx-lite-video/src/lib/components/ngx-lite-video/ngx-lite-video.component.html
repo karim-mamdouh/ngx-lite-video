@@ -1,9 +1,0 @@
-<div style="background-image: url(https://i.ytimg.com/vi/{{videoId}}/hqdefault.jpg);"
-  [class.play]="!(_showIframe|async)" class="ngx-lite-video__banner" (click)="_showIframe.next(true)">
-  <ng-container *ngIf="_showIframe |async" #iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/6drfp_3823I?autoplay=1"
-      title="YouTube video player" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen></iframe>
-  </ng-container>
-</div>
