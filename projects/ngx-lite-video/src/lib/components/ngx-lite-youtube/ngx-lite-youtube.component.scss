@@ -6,6 +6,11 @@
   margin: 0;
   background: center / cover no-repeat #000;
   cursor: pointer;
+  box-sizing: border-box;
+
+  > * {
+    box-sizing: border-box;
+  }
 
   iframe {
     position: absolute;
