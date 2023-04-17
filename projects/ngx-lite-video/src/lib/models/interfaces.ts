@@ -23,3 +23,10 @@ export interface VimeoVideo {
   tags: string;
   embed_privacy: string;
 }
+
+export interface YouTubeQualities {
+  low: string;
+  medium: string;
+  high: string;
+  max: string;
+}
