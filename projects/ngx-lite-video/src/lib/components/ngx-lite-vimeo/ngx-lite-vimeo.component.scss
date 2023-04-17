@@ -29,7 +29,7 @@
   }
   &__play {
     font-size: 13px;
-    z-index: 999;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,7 +41,9 @@
     padding: 0;
     margin: 0;
     border: 0;
+
     .vimeo {
+      all: unset;
       width: 6.5em;
       height: 4em;
       background: rgba(23, 35, 34, 0.75);
@@ -53,7 +55,7 @@
       align-items: center;
       justify-content: center;
       &::after {
-        content: '';
+        content: "";
         border-color: transparent transparent transparent #fff;
         border-style: solid;
         border-width: 10px 0 10px 20px;

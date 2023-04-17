@@ -24,9 +24,7 @@ export interface VimeoVideo {
   embed_privacy: string;
 }
 
-export interface YouTubeQualities {
-  low: string;
-  medium: string;
-  high: string;
-  max: string;
+export interface VimeoLazyData {
+  bannerSrc: string;
+  title: string;
 }

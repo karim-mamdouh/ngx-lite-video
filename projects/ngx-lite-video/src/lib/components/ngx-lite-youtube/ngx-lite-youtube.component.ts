@@ -21,7 +21,7 @@ import { NgxLiteVideoGeneralService } from '../../services/ngx-lite-video-genera
 })
 export class NgxLiteYoutubeComponent implements OnInit {
   //#region Declerations
-  _showIframe: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  _showIframe$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   _bannerSrc!: string;
   _videoUrl!: SafeUrl;
 
