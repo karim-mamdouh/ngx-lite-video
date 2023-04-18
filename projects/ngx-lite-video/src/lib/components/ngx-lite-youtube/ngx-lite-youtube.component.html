@@ -2,6 +2,7 @@
   [ngStyle]="{ 'background-image': _bannerSrc }"
   class="ngx-lite-video"
   (click)="_showIframe$.next(true)"
+  [ngClass]="{ 'ngx-lite-with-title': videoTitle }"
 >
   <iframe
     *ngIf="_showIframe$ | async"

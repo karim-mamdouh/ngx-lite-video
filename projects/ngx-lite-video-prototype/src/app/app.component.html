@@ -1,13 +1,14 @@
 <ngx-lite-youtube
-  videoId="6drfp_3823I"
+  videoId="Ys7xdebd66Y"
   thumbQuality="max"
-  videoTitle="London Grammar - Strong [Official Video]"
+  [videoTitle]="youtubeTitle"
+  [allowFullScreen]="false"
 ></ngx-lite-youtube>
 <!-- <youtube-lite video="6drfp_3823I"></youtube-lite> -->
 <ngx-lite-vimeo
-  videoId="786570322"
+  [videoId]="vimeoId"
   [showTitle]="true"
   thumbQuality="max"
-  [isBackground]="true"
 ></ngx-lite-vimeo>
 <!-- <lite-vimeo videoid="786570322"></lite-vimeo> -->
+<button class="btn-change" (click)="change()">Change Video</button>

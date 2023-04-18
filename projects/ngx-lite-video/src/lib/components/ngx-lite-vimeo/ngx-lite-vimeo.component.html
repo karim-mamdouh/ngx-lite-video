@@ -3,9 +3,10 @@
   [ngStyle]="{ 'background-image': vimeoBanner.bannerSrc }"
   class="ngx-lite-video"
   (click)="_showIframe$.next(true)"
+  [ngClass]="{ 'ngx-lite-with-title': showTitle }"
 >
   <iframe
-    *ngIf="_showIframe$.value"
+    *ngIf="_showIframe$ | async"
     width="640"
     height="360"
     frameborder="0"
