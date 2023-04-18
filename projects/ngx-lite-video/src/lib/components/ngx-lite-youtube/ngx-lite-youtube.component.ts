@@ -76,6 +76,8 @@ export class NgxLiteYoutubeComponent implements OnInit {
 
   //#region Life Cycle Hooks
   ngOnInit(): void {
+    this.__ngxService.hasNoVideoId(this.videoId);
+
     this._bannerSrc = `url(${this.__ngxService.getYouTubeBanner(
       this.videoId,
       this.thumbQuality

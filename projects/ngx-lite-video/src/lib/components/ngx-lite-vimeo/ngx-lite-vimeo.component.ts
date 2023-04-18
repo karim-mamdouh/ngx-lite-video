@@ -48,6 +48,8 @@ export class NgxLiteVimeoComponent implements OnInit {
 
   //#region Life Cycle Hooks
   ngOnInit(): void {
+    this.__ngxService.hasNoVideoId(this.videoId);
+
     this._vimeoBanner$ = this.__ngxService.getVimeoBanner(
       this.videoId,
       this.thumbQuality

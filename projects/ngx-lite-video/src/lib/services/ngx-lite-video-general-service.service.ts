@@ -72,4 +72,11 @@ export class NgxLiteVideoGeneralService {
         }))
       );
   }
+
+  hasNoVideoId(videoId: string): void {
+    if (!videoId) {
+      throw new Error('Video ID MUST be provided');
+    }
+  }
+  //#endregion
 }
