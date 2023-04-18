@@ -2,7 +2,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   Input,
-  OnInit,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SafeUrl } from '@angular/platform-browser';
@@ -19,7 +18,7 @@ import { NgxLiteVideoGeneralService } from '../../services/ngx-lite-video-genera
   providers: [NgxLiteVideoGeneralService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NgxLiteYoutubeComponent implements OnInit {
+export class NgxLiteYoutubeComponent {
   //#region Declerations
   _showIframe$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   _bannerSrc!: string;
@@ -30,7 +29,22 @@ export class NgxLiteYoutubeComponent implements OnInit {
    * @type string
    * @Required true
    */
-  @Input() videoId!: string;
+  @Input() set videoId(id: string) {
+    this.__ngxService.hasNoVideoId(id);
+    this._bannerSrc = `url(${this.__ngxService.getYouTubeBanner(
+      id,
+      this.thumbQuality
+    )})`;
+
+    this._videoUrl = this.__ngxService.getYouTubeUrl(
+      id,
+      this.hasControls,
+      this.allowFullScreen,
+      this.loop,
+      this.start,
+      this.end
+    );
+  };
   /**
    * Title to be displayed in lazy mode
    * @type string
@@ -72,25 +86,7 @@ export class NgxLiteYoutubeComponent implements OnInit {
   @Input() end!: number;
   //#endregion
 
-  constructor(private __ngxService: NgxLiteVideoGeneralService) {}
+  constructor(private __ngxService: NgxLiteVideoGeneralService) { }
 
-  //#region Life Cycle Hooks
-  ngOnInit(): void {
-    this.__ngxService.hasNoVideoId(this.videoId);
 
-    this._bannerSrc = `url(${this.__ngxService.getYouTubeBanner(
-      this.videoId,
-      this.thumbQuality
-    )})`;
-
-    this._videoUrl = this.__ngxService.getYouTubeUrl(
-      this.videoId,
-      this.hasControls,
-      this.allowFullScreen,
-      this.loop,
-      this.start,
-      this.end
-    );
-  }
-  //#endregion
 }

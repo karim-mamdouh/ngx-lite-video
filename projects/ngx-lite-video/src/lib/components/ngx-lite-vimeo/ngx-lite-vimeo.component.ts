@@ -2,7 +2,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   Input,
-  OnInit,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -20,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [NgxLiteVideoGeneralService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NgxLiteVimeoComponent implements OnInit {
+export class NgxLiteVimeoComponent {
   //#region Declerations
   _showIframe$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   _videoUrl!: SafeUrl;
@@ -31,7 +30,16 @@ export class NgxLiteVimeoComponent implements OnInit {
    * @type string
    * @Required true
    */
-  @Input() videoId!: string;
+  @Input() set videoId(id: string) {
+    this.__ngxService.hasNoVideoId(id);
+
+    this._vimeoBanner$ = this.__ngxService.getVimeoBanner(
+      id,
+      this.thumbQuality
+    );
+
+    this._videoUrl = this.__ngxService.getVimeoVideoUrl(id);
+  }
   /**
    * Lazy image quality
    * @type ThumbSize
@@ -44,18 +52,7 @@ export class NgxLiteVimeoComponent implements OnInit {
   @Input() showTitle: boolean = false;
   //#endregion
 
-  constructor(private __ngxService: NgxLiteVideoGeneralService) {}
+  constructor(private __ngxService: NgxLiteVideoGeneralService) { }
 
-  //#region Life Cycle Hooks
-  ngOnInit(): void {
-    this.__ngxService.hasNoVideoId(this.videoId);
 
-    this._vimeoBanner$ = this.__ngxService.getVimeoBanner(
-      this.videoId,
-      this.thumbQuality
-    );
-
-    this._videoUrl = this.__ngxService.getVimeoVideoUrl(this.videoId);
-  }
-  //#endregion
 }
