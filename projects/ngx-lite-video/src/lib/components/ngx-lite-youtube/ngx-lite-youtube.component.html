@@ -4,7 +4,7 @@
   (click)="_showIframe$.next(true)"
 >
   <iframe
-    *ngIf="_showIframe$.value"
+    *ngIf="_showIframe$ | async"
     width="560"
     height="315"
     [src]="_videoUrl"
@@ -14,7 +14,7 @@
     allowfullscreen
   ></iframe>
 
-
+  <!-- Play btn before iframe is loaded -->
   <div class="ngx-lite-video__play" *ngIf="!_showIframe$.value">
     <button class="youtube-logo"></button>
   </div>

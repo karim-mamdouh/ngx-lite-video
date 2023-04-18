@@ -12,10 +12,10 @@ import { NgxLiteVideoGeneralService } from '../../services/ngx-lite-video-genera
 
 @Component({
   selector: 'ngx-lite-youtube',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './ngx-lite-youtube.component.html',
   styleUrls: ['./ngx-lite-youtube.component.scss'],
+  standalone: true,
+  imports: [CommonModule],
   providers: [NgxLiteVideoGeneralService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
