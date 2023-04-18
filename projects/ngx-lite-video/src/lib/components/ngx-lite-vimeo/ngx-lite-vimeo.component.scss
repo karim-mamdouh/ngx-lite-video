@@ -1,74 +1,28 @@
-.ngx-lite-video {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding: 56.25% 0 0 0;
-  margin: 0;
-  background: center / cover no-repeat #000;
-  cursor: pointer;
+@use "../../styles/ngx-lite-video-general" as *;
 
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    border: 0;
-  }
-
-  &__title {
-    position: absolute;
-    top: 0;
-    left: 20px;
-    color: white;
-    font-size: 18px;
-    font-family: "YouTube Noto", Roboto, Arial, Helvetica, sans-serif;
-    line-height: 1.3;
-  }
-  &__play{
-    font-size: 13px;
-    z-index: 999;
+.ngx-lite-video__play {
+  .vimeo-logo {
+    all: unset;
+    width: 72px;
+    height: 48px;
+    background: rgba(23, 35, 34, 0.75);
+    opacity: 0.8;
+    border-radius: 8px;
+    transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    .vimeo {
-      width: 6.5em;
-      height: 4em;
-      background: rgba(23, 35, 34, 0.75);
-      z-index: 1;
-      opacity: 0.8;
-      border-radius: 0.5em;
-      transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
 
-      span {
-
-        border-color: transparent transparent transparent #fff;
-        border-style: solid;
-        border-width: 10px 0 10px 20px;
-      }
+    &::after {
+      content: "";
+      border-color: transparent transparent transparent #fff;
+      border-style: solid;
+      border-width: 10px 0 10px 20px;
     }
-    &:hover {
-      .vimeo{
+  }
 
-        background: #00adef;
-        opacity:1;
-      }
-    }
-
+  &:hover .vimeo-logo {
+    background: #00adef;
+    opacity: 1;
   }
 }
-
-

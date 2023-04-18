@@ -1,6 +1,8 @@
 {
   "name": "ngx-lite-video",
   "version": "0.0.1",
+  "description": "Lazy-loaded YouTube and Vimeo video embed.",
+  "homepage": "https://github.com/karim-mamdouh/ngx-lite-video#readme",
   "peerDependencies": {
     "@angular/common": "^15.2.0",
     "@angular/core": "^15.2.0"
@@ -8,5 +10,21 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "author": "Hassan Kakeh/Karim Mamdouh",
+  "license": "GNU GENERAL PUBLIC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karim-mamdouh/ngx-lite-video"
+  },
+  "bugs": {
+    "url": "https://github.com/karim-mamdouh/ngx-lite-video/issues"
+  },
+  "keywords": [
+    "YouTube",
+    "embed",
+    "lazy",
+    "load",
+    "Vimeo"
+  ]
 }

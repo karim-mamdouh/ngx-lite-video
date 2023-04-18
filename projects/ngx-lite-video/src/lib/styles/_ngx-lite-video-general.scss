@@ -1,0 +1,61 @@
+.ngx-lite-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding: 56.25% 0 0 0;
+  background: center / cover no-repeat #000;
+  cursor: pointer;
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  &__title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 18px;
+    font-family: "YouTube Noto", Roboto, Arial, Helvetica, sans-serif;
+    line-height: 1.3;
+  }
+
+  &__play {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.ngx-lite-with-title {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.7904411764705882) 0%,
+      rgba(0, 0, 0, 0) 35%
+    );
+
+    width: 100%;
+    height: 100%;
+  }
+}

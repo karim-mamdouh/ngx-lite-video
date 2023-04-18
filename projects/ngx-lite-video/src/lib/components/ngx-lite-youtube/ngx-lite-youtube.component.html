@@ -1,11 +1,11 @@
 <div
   [ngStyle]="{ 'background-image': _bannerSrc }"
-  [ngClass]="{ 'ngx-lite-video__play': !(_showIframe | async) }"
   class="ngx-lite-video"
-  (click)="_showIframe.next(true)"
+  (click)="_showIframe$.next(true)"
+  [ngClass]="{ 'ngx-lite-with-title': videoTitle }"
 >
   <iframe
-    *ngIf="_showIframe.value"
+    *ngIf="_showIframe$ | async"
     width="560"
     height="315"
     [src]="_videoUrl"
@@ -15,8 +15,13 @@
     allowfullscreen
   ></iframe>
 
+  <!-- Play btn before iframe is loaded -->
+  <div class="ngx-lite-video__play" *ngIf="!_showIframe$.value">
+    <button class="youtube-logo"></button>
+  </div>
+
   <!-- Title shown before iframe is loaded -->
-  <p *ngIf="videoTitle && !_showIframe.value" class="ngx-lite-video__title">
+  <p *ngIf="videoTitle && !_showIframe$.value" class="ngx-lite-video__title">
     {{ videoTitle }}
   </p>
 </div>
