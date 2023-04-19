@@ -40,8 +40,8 @@ export class NgxLiteVideoGeneralService {
   //   - A string representing the URL of the thumbnail image
   getYouTubeBanner(videoId: string, quality: ThumbSize): string {
     // Return the URL using string interpolation with the given videoId and quality size
-    // YouTube uses a specific format for their thumbnail URLs, hence the use of `http://img.youtube.com/vi/<videoId>/<size>.jpg`
-    return `http://img.youtube.com/vi/${videoId}/${this.__youtubeSizes[quality]}.jpg`;
+    // YouTube uses a specific format for their thumbnail URLs, hence the use of `https://img.youtube.com/vi/<videoId>/<size>.jpg`
+    return `https://img.youtube.com/vi/${videoId}/${this.__youtubeSizes[quality]}.jpg`;
   }
   // This function returns a sanitized YouTube video URL with specified parameters
   // Parameters:
