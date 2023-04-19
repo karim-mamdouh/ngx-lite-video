@@ -6,6 +6,8 @@ The package is built specifically for Angular, utilizing Angular's onpush change
 
 This package requires a minimum of Angular version 13 and rxjs version 7.2 to function properly.
 
+Try it yourself by measuring the performance on [Demo](https://karim-mamdouh.github.io/ngx-lite-video/) page
+
 ## Key Features
 
 - Lazy loads embedded iframes for YouTube and Vimeo videos
