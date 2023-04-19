@@ -20,7 +20,7 @@
             "outputPath": "dist/ngx-lite-video-prototype",
             "index": "projects/ngx-lite-video-prototype/src/index.html",
             "main": "projects/ngx-lite-video-prototype/src/main.ts",
-            "polyfills": ["zone.js"],
+            "polyfills": "projects/ngx-lite-video-prototype/src/polyfills.ts",
             "tsConfig": "projects/ngx-lite-video-prototype/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [

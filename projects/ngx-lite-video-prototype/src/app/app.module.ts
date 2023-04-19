@@ -1,21 +1,20 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {
-  NgxLiteVimeoComponent,
-  NgxLiteYoutubeComponent,
+  NgxLiteVimeoModule,
+  NgxLiteYoutubeModule,
 } from 'projects/ngx-lite-video/src/public-api';
 
 @NgModule({
   declarations: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxLiteYoutubeComponent,
-    NgxLiteVimeoComponent,
+    NgxLiteYoutubeModule,
+    NgxLiteVimeoModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
