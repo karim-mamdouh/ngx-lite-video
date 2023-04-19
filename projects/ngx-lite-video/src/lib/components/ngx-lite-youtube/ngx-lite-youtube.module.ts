@@ -1,6 +1,8 @@
+// Modules
 import { NgModule } from '@angular/core';
-import { NgxLiteYoutubeComponent } from './ngx-lite-youtube.component';
 import { CommonModule } from '@angular/common';
+// Components
+import { NgxLiteYoutubeComponent } from './ngx-lite-youtube.component';
 
 @NgModule({
   declarations: [NgxLiteYoutubeComponent],
