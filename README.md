@@ -4,9 +4,7 @@ ngx-lite-video is an Angular package that provides lazy loading capabilities for
 
 The package is built specifically for Angular, utilizing Angular's onpush change detection strategy for efficient rendering and updating of video components. It also includes features such as customizable lazy loading thresholds and options for controlling video playback and display.
 
-This package requires a minimum of Angular version 13 and rxjs version 7 to function properly.
-
-<br/>
+This package requires a minimum of Angular version 13 and rxjs version 7.2 to function properly.
 
 ## Key Features
 
@@ -15,6 +13,8 @@ This package requires a minimum of Angular version 13 and rxjs version 7 to func
 - Uses Angular OnPush change detection for optimized performance
 - Customizable options including video quality, start time, and more
 - Provides a seamless user experience by loading videos only when needed
+
+<br/>
 
 ## Install
 
@@ -36,6 +36,8 @@ Once installed, import the module that you wish to use in your desired module
 export class YourModule {}
 ```
 
+<br/>
+
 ## Usage
 
 To use ngx-lite-video, add the 'ngx-lite-youtube'/'ngx-lite-vimeo' component to your template and configure its properties as needed:
@@ -52,7 +54,7 @@ To use ngx-lite-video, add the 'ngx-lite-youtube'/'ngx-lite-vimeo' component to 
 
 To override styling create a class in global style.scss file & provide it to styleClass attribute
 
-For more detailed examples see [Demo](https://ng-select.github.io/ng-select#/data-sources) page
+For more detailed examples see [Demo](https://karim-mamdouh.github.io/ngx-lite-video/) page
 
 <br/>
 
@@ -90,6 +92,8 @@ For more detailed examples see [Demo](https://ng-select.github.io/ng-select#/dat
 ## Contributing
 
 Contributions are welcome. You can start by creating new Issue with proposal or bug report.
+
+<br/>
 
 ## License
 
