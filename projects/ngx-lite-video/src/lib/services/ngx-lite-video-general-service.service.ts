@@ -103,7 +103,7 @@ export class NgxLiteVideoGeneralService {
   ): Observable<VimeoLazyData> {
     // Get data about the Vimeo video from the Vimeo API using Angular's HttpClient service
     return this.__http
-      .get<VimeoVideo[]>(`http://vimeo.com/api/v2/video/${videoId}.json`)
+      .get<VimeoVideo[]>(`https://vimeo.com/api/v2/video/${videoId}.json`)
       .pipe(
         map((data: any) => ({
           bannerSrc: `url(${data[0][this.__thumbHelper[quality]]})`,
