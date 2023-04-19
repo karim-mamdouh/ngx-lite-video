@@ -5,19 +5,15 @@ import {
   OnInit,
   OnChanges,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ThumbSize, VimeoLazyData } from '../../models';
 import { NgxLiteVideoGeneralService } from '../../services/ngx-lite-video-general-service.service';
 import { SafeUrl } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'ngx-lite-vimeo',
   templateUrl: './ngx-lite-vimeo.component.html',
   styleUrls: ['./ngx-lite-vimeo.component.scss'],
-  standalone: true,
-  imports: [CommonModule, HttpClientModule],
   providers: [NgxLiteVideoGeneralService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -63,6 +59,11 @@ export class NgxLiteVimeoComponent implements OnInit, OnChanges {
    * @default false
    */
   @Input() isBackground: boolean = false;
+  /**
+   * External styling class
+   * @type string
+   */
+  @Input() styleClass!: string;
   //#endregion
 
   constructor(private __ngxService: NgxLiteVideoGeneralService) {}
