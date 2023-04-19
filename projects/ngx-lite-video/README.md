@@ -1,24 +1,22 @@
-# NgxLiteVideo
+### YouTube Attributes
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+| Property        | Type    | Default   | Description                                  |
+| --------------- | ------- | --------- | -------------------------------------------- |
+| videoId         | string  | undefined | Video ID to be viewed                        |
+| videoTitle      | string  | undefined | Title to be displayed in lazy mode           |
+| hasControls     | boolean | false     | Shows/hides video controls in iframe         |
+| loop            | boolean | false     | Enables video looping                        |
+| allowFullScreen | boolean | true      | Enables/disables fullscreen button in iframe |
+| start           | number  | undefined | Sets starting video time (in seconds)        |
+| end             | number  | undefined | Sets ending video time (in seconds)          |
 
-## Code scaffolding
+### Vimeo Attributes
 
-Run `ng generate component component-name --project ngx-lite-video` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-lite-video`.
-> Note: Don't forget to add `--project ngx-lite-video` or else it will be added to the default project in your `angular.json` file. 
-
-## Build
-
-Run `ng build ngx-lite-video` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Publishing
-
-After building your library with `ng build ngx-lite-video`, go to the dist folder `cd dist/ngx-lite-video` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ngx-lite-video` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+| Property     | Type                           | Default   | Description                                                                                                                                 |
+| ------------ | ------------------------------ | --------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| videoId      | string                         | undefined | Video ID to be viewed                                                                                                                       |
+| thumbQuality | 'low', 'medium', 'high', 'max' | high      | Lazy image quality                                                                                                                          |
+| showTitle    | boolean                        | false     | Enables/disables showing title in lazy mode                                                                                                 |
+| hasControls  | boolean                        | false     | Shows/hides video controls in iframe                                                                                                        |
+| loop         | boolean                        | false     | Enables video looping                                                                                                                       |
+| isBackground | boolean                        | false     | Enables vimeo background mode, please refer to [https://developer.vimeo.com/player/sdk/embed](https://developer.vimeo.com/player/sdk/embed) |
