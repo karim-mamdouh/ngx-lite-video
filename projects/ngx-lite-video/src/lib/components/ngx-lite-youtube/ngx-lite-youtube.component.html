@@ -1,6 +1,6 @@
 <div
   [ngStyle]="{ 'background-image': _bannerSrc }"
-  class="ngx-lite-video"
+  class="ngx-lite-video{{ styleClass ? ' ' + styleClass : '' }}"
   (click)="_showIframe$.next(true)"
   [ngClass]="{ 'ngx-lite-with-title': videoTitle }"
 >
@@ -17,7 +17,7 @@
 
   <!-- Play btn before iframe is loaded -->
   <div class="ngx-lite-video__play" *ngIf="!_showIframe$.value">
-    <button class="youtube-logo"></button>
+    <button class="youtube-logo" aria-label="YouTube Play Button"></button>
   </div>
 
   <!-- Title shown before iframe is loaded -->

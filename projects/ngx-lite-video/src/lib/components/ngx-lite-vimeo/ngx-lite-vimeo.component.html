@@ -1,7 +1,7 @@
 <div
   *ngIf="_vimeoBanner$ | async as vimeoBanner"
   [ngStyle]="{ 'background-image': vimeoBanner.bannerSrc }"
-  class="ngx-lite-video"
+  class="ngx-lite-video{{ styleClass ? ' ' + styleClass : '' }}"
   (click)="_showIframe$.next(true)"
   [ngClass]="{ 'ngx-lite-with-title': showTitle }"
 >
@@ -17,7 +17,7 @@
 
   <!-- Play btn before iframe is loaded -->
   <div class="ngx-lite-video__play" *ngIf="!_showIframe$.value">
-    <button class="vimeo-logo"></button>
+    <button class="vimeo-logo" aria-label="Vimeo Play Button"></button>
   </div>
 
   <!-- Title shown before iframe is loaded -->
