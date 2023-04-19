@@ -1,7 +1,7 @@
 <div
   *ngIf="_vimeoBanner$ | async as vimeoBanner"
   [ngStyle]="{ 'background-image': vimeoBanner.bannerSrc }"
-  class="ngx-lite-video"
+  class="ngx-lite-video{{ styleClass ? ' ' + styleClass : '' }}"
   (click)="_showIframe$.next(true)"
   [ngClass]="{ 'ngx-lite-with-title': showTitle }"
 >

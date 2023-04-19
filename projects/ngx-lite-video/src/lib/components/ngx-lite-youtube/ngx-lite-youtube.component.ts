@@ -5,7 +5,6 @@ import {
   OnChanges,
   OnInit,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { SafeUrl } from '@angular/platform-browser';
 import { BehaviorSubject } from 'rxjs';
 import { ThumbSize } from '../../models';
@@ -15,8 +14,6 @@ import { NgxLiteVideoGeneralService } from '../../services/ngx-lite-video-genera
   selector: 'ngx-lite-youtube',
   templateUrl: './ngx-lite-youtube.component.html',
   styleUrls: ['./ngx-lite-youtube.component.scss'],
-  standalone: true,
-  imports: [CommonModule],
   providers: [NgxLiteVideoGeneralService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -71,6 +68,11 @@ export class NgxLiteYoutubeComponent implements OnInit, OnChanges {
    * @type number
    */
   @Input() end!: number;
+  /**
+   * External styling class
+   * @type string
+   */
+  @Input() styleClass!: string;
   //#endregion
 
   constructor(private __ngxService: NgxLiteVideoGeneralService) {}
