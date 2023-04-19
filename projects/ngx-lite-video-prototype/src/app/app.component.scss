@@ -1,9 +1,20 @@
-.cont {
-  width: 75%;
-  padding: 0;
-  margin: 0;
+button {
+  @apply rounded-md bg-zinc-50 px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50;
+  &.active {
+    @apply bg-red-500;
+  }
 }
-.btn-change{
-  padding: 0.5rem 1rem;
-  margin-top: 1rem;
+.npm-logo {
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4IiBpZD0ibnBtIj48cGF0aCBmaWxsPSIjY2IzODM3IiBkPSJNMiwzOC41SDEyNlY4Mi4yMUg2NFY4OS41SDM2LjQ0VjgyLjIxSDJaTTguODksNzQuOTNIMjIuNjdWNTMuMDdoNi44OVY3NC45M2g2Ljg5VjQ1Ljc5SDguODlaTTQzLjMzLDQ1Ljc5VjgyLjIxSDU3LjExVjc0LjkzSDcwLjg5VjQ1Ljc5Wm0xMy43OCw3LjI5SDY0VjY3LjY0SDU3LjExWm0yMC42Ny03LjI5Vjc0LjkzSDkxLjU2VjUzLjA3aDYuODlWNzQuOTNoNi44OVY1My4wN2g2Ljg5Vjc0LjkzaDYuODlWNDUuNzlaIj48L3BhdGg+PC9zdmc+");
+}
+.github-logo {
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiIgaWQ9ImdpdGh1YiI+PHBhdGggZD0iTTcuOTk5IDBDMy41ODIgMCAwIDMuNTk2IDAgOC4wMzJhOC4wMzEgOC4wMzEgMCAwIDAgNS40NzIgNy42MjFjLjQuMDc0LjU0Ni0uMTc0LjU0Ni0uMzg3IDAtLjE5MS0uMDA3LS42OTYtLjAxMS0xLjM2Ni0yLjIyNS40ODUtMi42OTUtMS4wNzctMi42OTUtMS4wNzctLjM2My0uOTI4LS44ODgtMS4xNzUtLjg4OC0xLjE3NS0uNzI3LS40OTguMDU0LS40ODguMDU0LS40ODguODAzLjA1NyAxLjIyNS44MjggMS4yMjUuODI4LjcxNCAxLjIyNyAxLjg3My44NzMgMi4zMjkuNjY3LjA3Mi0uNTE5LjI3OS0uODczLjUwOC0xLjA3NC0xLjc3Ni0uMjAzLTMuNjQ0LS44OTItMy42NDQtMy45NjkgMC0uODc3LjMxMi0xLjU5NC44MjQtMi4xNTYtLjA4My0uMjAzLS4zNTctMS4wMi4wNzgtMi4xMjUgMCAwIC42NzItLjIxNiAyLjIuODIzYTcuNjMzIDcuNjMzIDAgMCAxIDIuMDAzLS4yNyA3LjY1IDcuNjUgMCAwIDEgMi4wMDMuMjcxYzEuNTI3LTEuMDM5IDIuMTk4LS44MjMgMi4xOTgtLjgyMy40MzYgMS4xMDYuMTYyIDEuOTIyLjA4IDIuMTI1LjUxMy41NjIuODIyIDEuMjc5LjgyMiAyLjE1NiAwIDMuMDg1LTEuODcgMy43NjQtMy42NTIgMy45NjMuMjg3LjI0OC41NDMuNzM4LjU0MyAxLjQ4NyAwIDEuMDc0LS4wMSAxLjk0LS4wMSAyLjIwMyAwIC4yMTUuMTQ0LjQ2NS41NS4zODZBOC4wMzIgOC4wMzIgMCAwIDAgMTYgOC4wMzJDMTYgMy41OTYgMTIuNDE4IDAgNy45OTkgMHoiPjwvcGF0aD48L3N2Zz4=");
 }

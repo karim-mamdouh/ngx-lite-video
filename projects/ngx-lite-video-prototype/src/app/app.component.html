@@ -1,14 +1,102 @@
-<ngx-lite-youtube
-  videoId="Ys7xdebd66Y"
-  thumbQuality="max"
-  [videoTitle]="youtubeTitle"
-  [allowFullScreen]="false"
-></ngx-lite-youtube>
-<!-- <youtube-lite video="6drfp_3823I"></youtube-lite> -->
-<ngx-lite-vimeo
-  [videoId]="vimeoId"
-  [showTitle]="true"
-  thumbQuality="max"
-></ngx-lite-vimeo>
-<!-- <lite-vimeo videoid="786570322"></lite-vimeo> -->
-<button class="btn-change" (click)="change()">Change Video</button>
+<header>
+  <nav class="bg-zinc-50 py-3 px-8 md:px-16 ">
+    <div class="flex">
+      <div class="flex-grow">
+        <h2 class="text-2xl inline-block font-bold me-2">
+          ngx-lite-video
+        </h2>
+        <sub>0.0.2v</sub>
+      </div>
+      <a href="https://www.npmjs.com/package/ngx-lite-video" target="_blank">
+        <i class="npm-logo me-4 cursor-pointer"></i>
+      </a>
+      <a href="https://github.com/karim-mamdouh/ngx-lite-video" target="_blank">
+        <i class="github-logo cursor-pointer"></i>
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- Examples of usage -->
+<main class="px-8 md:px-16">
+  <!-- Basic example -->
+  <h3 class="text-xl font-bold">Basic</h3>
+  <section class="grid gap-6 grid-cols-1 md:grid-cols-2">
+    <!-- Youtube embed with title -->
+    <div>
+      <h4 class="text-lg font-semibold mb-3">Youtube :</h4>
+      <ngx-lite-youtube videoId="Ys7xdebd66Y" videoTitle="London Grammar - Strong [Official Video]"></ngx-lite-youtube>
+    </div>
+    <div>
+      <!-- Vimeo embed with title -->
+      <h4 class="text-lg font-semibold mb-3">Vimeo :</h4>
+      <ngx-lite-vimeo videoId="806024932" [showTitle]="true"></ngx-lite-vimeo>
+    </div>
+  </section>
+  <!-- Real time video change -->
+  <h3 class="text-xl font-bold mt-8">Real time video change</h3>
+  <section class="grid gap-6 grid-cols-1 md:grid-cols-2">
+    <!-- Youtube RealTime video change when user click btn  -->
+    <div>
+      <h4 class="text-lg font-semibold mb-3">Youtube :</h4>
+      <ngx-lite-youtube [videoId]="youtubeId"></ngx-lite-youtube>
+      <div class="flex justify-center gap-6 mt-6">
+        <button [class.active]="youtubeId==youtubeVideos[0].id" (click)="changeYoutubeVideo(0)">Video 1</button>
+        <button [class.active]="youtubeId==youtubeVideos[1].id" (click)="changeYoutubeVideo(1)">Video 2</button>
+      </div>
+    </div>
+    <!-- Vimeo RealTime video change when user click btn  -->
+    <div>
+      <h4 class="text-lg font-semibold mb-3">Vimeo :</h4>
+      <ngx-lite-vimeo [videoId]="vimeoId"></ngx-lite-vimeo>
+      <div class="flex justify-center gap-6 mt-6">
+        <button [class.active]="vimeoId==vimeoVideos[0].id" (click)="changeVimeoVideo(0)">Video 1</button>
+        <button [class.active]="vimeoId==vimeoVideos[1].id" (click)="changeVimeoVideo(1)">Video 2</button>
+      </div>
+    </div>
+  </section>
+  <!-- Play embed video with custom  params -->
+  <h3 class="text-xl font-bold mt-8">Custom Params</h3>
+  <section class="flex md:flex-row flex-col gap-6">
+    <!-- Play youtube video with loop and disallow full screen mode  -->
+    <div class=" basis-full">
+      <h4 class="text-lg font-semibold mb-3">Youtube :
+        <span class="text-sm text-gray-400">Ex: loop:true - allowFullScreen:false</span>
+      </h4>
+      <ngx-lite-youtube videoId="tHFMD2f__iA" thumbQuality="max" videoTitle="London Grammar - Strong [Official Video]"
+        [allowFullScreen]="false" [loop]="true"></ngx-lite-youtube>
+    </div>
+    <!-- Enables vimeo background mode  -->
+    <div class=" basis-full">
+      <h4 class="text-lg font-semibold mb-3">Vimeo :
+        <span class="text-sm text-gray-400">Ex: isBackground:true</span>
+      </h4>
+      <ngx-lite-vimeo videoId="806024932" [showTitle]="true" thumbQuality="max" [isBackground]="true"></ngx-lite-vimeo>
+    </div>
+  </section>
+  <!-- Change thumb image quality youtube/vimeo -->
+  <h3 class="text-xl font-bold mt-8">Image quality</h3>
+  <section class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div>
+      <h4 class="text-lg font-semibold mb-3">max
+        <span class="text-sm text-gray-400">( default )</span>
+      </h4>
+      <ngx-lite-youtube videoId="Ys7xdebd66Y" thumbQuality="max"></ngx-lite-youtube>
+
+    </div>
+    <div>
+      <h4 class="text-lg font-semibold mb-3">high</h4>
+      <ngx-lite-youtube videoId="Ys7xdebd66Y" thumbQuality="high"></ngx-lite-youtube>
+
+    </div>
+    <div>
+      <h4 class="text-lg font-semibold mb-3">medium</h4>
+      <ngx-lite-youtube videoId="Ys7xdebd66Y" thumbQuality="medium"></ngx-lite-youtube>
+
+    </div>
+    <div>
+      <h4 class="text-lg font-semibold mb-3">low</h4>
+      <ngx-lite-youtube videoId="Ys7xdebd66Y" thumbQuality="medium"></ngx-lite-youtube>
+
+    </div>
+  </section>
+</main>
