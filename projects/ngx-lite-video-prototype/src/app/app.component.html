@@ -1,9 +1,9 @@
-<header class="pt-5">
-  <nav class="bg-zinc-50 py-3 px-8 md:px-16">
-    <div class="flex">
+<header class="pt-5 bg-zinc-100">
+  <nav class=" pb-5 px-8 md:px-16">
+    <div class="flex items-center">
       <div class="flex-grow">
-        <h2 class="text-4xl inline-block font-bold me-2">ngx-lite-video</h2>
-        <sub>v1.0.1</sub>
+        <h2 class="md:text-4xl text-3xl inline-block font-bold me-2">ngx-lite-video</h2>
+        <sub>v1.2.0</sub>
       </div>
       <a href="https://www.npmjs.com/package/ngx-lite-video" target="_blank">
         <i class="npm-logo me-4 cursor-pointer"></i>
@@ -113,7 +113,6 @@
     <div>
       <h4 class="text-lg font-semibold mb-3">
         Max
-        <span class="text-sm text-gray-400">( default )</span>
       </h4>
       <ngx-lite-youtube
         videoId="Ys7xdebd66Y"
@@ -121,7 +120,7 @@
       ></ngx-lite-youtube>
     </div>
     <div>
-      <h4 class="text-lg font-semibold mb-3">High</h4>
+      <h4 class="text-lg font-semibold mb-3">High <span class="text-sm text-gray-400">( default )</span></h4>
       <ngx-lite-youtube
         videoId="Ys7xdebd66Y"
         thumbQuality="high"
@@ -135,10 +134,10 @@
       ></ngx-lite-youtube>
     </div>
     <div>
-      <h4 class="text-lg font-semibold mb-3">Low</h4>
+      <h4 class="text-lg font-semibold mb-3">SD</h4>
       <ngx-lite-youtube
         videoId="Ys7xdebd66Y"
-        thumbQuality="medium"
+        thumbQuality="sd"
       ></ngx-lite-youtube>
     </div>
   </section>
