@@ -5,7 +5,7 @@ import {
   VideoQualities,
   VimeoLazyData,
 } from '../models';
-import { Injectable } from '@angular/core';
+import { Injectable, Optional } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, map, of } from 'rxjs';
 
@@ -13,7 +13,7 @@ import { Observable, catchError, map, of } from 'rxjs';
 export class NgxLiteVideoGeneralService {
   //#region Declerations
   private readonly __youtubeSizes: VideoQualities = {
-    low: 'sddefault',
+    sd: 'sddefault',
     medium: 'mqdefault',
     high: 'hqdefault',
     max: 'maxresdefault',
@@ -22,13 +22,13 @@ export class NgxLiteVideoGeneralService {
     max: 'thumbnail_large',
     high: 'thumbnail_large',
     medium: 'thumbnail_medium',
-    low: 'thumbnail_small',
+    sd: 'thumbnail_small',
   };
   //#endregion
 
   constructor(
     private __domSanitizer: DomSanitizer,
-    private __http: HttpClient
+    @Optional() private __http: HttpClient
   ) {}
 
   //#region Methods

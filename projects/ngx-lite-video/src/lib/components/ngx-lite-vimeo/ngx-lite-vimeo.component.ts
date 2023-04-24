@@ -75,6 +75,7 @@ export class NgxLiteVimeoComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     this.init();
+    this._showIframe$.next(false);
   }
   //#endregion
 

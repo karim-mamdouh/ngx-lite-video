@@ -1,5 +1,5 @@
 export interface VideoQualities {
-  low: string;
+  sd: string;
   medium: string;
   high: string;
   max: string;

@@ -1,6 +1,6 @@
 {
   "name": "ngx-lite-video",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "ngx-lite-video is an Angular package for lazy loading embedded YouTube and Vimeo videos, improving page speed and user experience.",
   "homepage": "https://karim-mamdouh.github.io/ngx-lite-video/",
   "peerDependencies": {
@@ -11,7 +11,6 @@
     "tslib": "^2.3.0"
   },
   "sideEffects": false,
-  "author": "Hassan Kakeh & Karim Mamdouh",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -32,6 +31,18 @@
   ],
   "engines": {
     "angular": "^13.3.0",
-    "rxjs": "^7.0.0"
-  }
+    "rxjs": "^7.2.0"
+  },
+  "contributors": [
+    {
+      "name": "Hassan Kakeh",
+      "url": "https://www.npmjs.com/~hasan-kakeh",
+      "email": "hasan.kakeh1@gmail.com"
+    },
+    {
+      "name": "Karim Mamdouh",
+      "url": "https://www.npmjs.com/~karim-mamdouh",
+      "email": "karim.mamdouh.594@gmail.com"
+    }
+  ]
 }
