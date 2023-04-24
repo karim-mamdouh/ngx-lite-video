@@ -1,1 +1,1 @@
-export declare type ThumbSize = 'low' | 'medium' | 'high' | 'max';
+export declare type ThumbSize = 'sd' | 'medium' | 'high' | 'max';

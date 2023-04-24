@@ -74,6 +74,7 @@ For more detailed examples see [Demo](https://karim-mamdouh.github.io/ngx-lite-v
 | start           | number  | undefined | Sets starting video time (in seconds)        |
 | end             | number  | undefined | Sets ending video time (in seconds)          |
 | styleClass      | string  | undefined | External styling class                       |
+| thumbQuality | 'sd', 'medium', 'high', 'max' | 'high'      | Lazy image quality                                                                                                                          |
 
 <br/>
 
@@ -82,7 +83,7 @@ For more detailed examples see [Demo](https://karim-mamdouh.github.io/ngx-lite-v
 | Property     | Type                           | Default   | Description                                                                                                                                 |
 | ------------ | ------------------------------ | --------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | videoId      | string                         | undefined | Video ID to be viewed                                                                                                                       |
-| thumbQuality | 'low', 'medium', 'high', 'max' | high      | Lazy image quality                                                                                                                          |
+| thumbQuality | 'sd', 'medium', 'high', 'max' | 'high'      | Lazy image quality                                                                                                                          |
 | showTitle    | boolean                        | false     | Enables/disables showing title in lazy mode                                                                                                 |
 | hasControls  | boolean                        | false     | Shows/hides video controls in iframe                                                                                                        |
 | loop         | boolean                        | false     | Enables video looping                                                                                                                       |
