@@ -4,8 +4,8 @@
   "description": "ngx-lite-video is an Angular package for lazy loading embedded YouTube and Vimeo videos, improving page speed and user experience.",
   "homepage": "https://karim-mamdouh.github.io/ngx-lite-video/",
   "peerDependencies": {
-    "@angular/common": "^13.3.0",
-    "@angular/core": "^13.3.0"
+    "@angular/common": ">=13.3.0",
+    "@angular/core": ">=13.3.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
